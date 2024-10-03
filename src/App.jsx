@@ -2,64 +2,80 @@ import { useState, useRef } from 'react'
 import './index.css'
 import './App.css'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import About from './pages/About'
 import Home from './pages/Home'
-import Checkout from './pages/Checkout'
-import About from './pages/about'
-
+import Checkout from './pages/checkout'
+ 
 const App = () => {
   const [total, setTotal] = useState()
-  const [open, setOpen] = useState()
-  const [catsInBasket, setCatsInBasket] = useState()
+  const [open, setOpen] = useState(false);
+  const [catsInBasket, setCatsInBasket] = useState ([])
   const navigate = useNavigate()
-
+ 
   const handleClose = () => {
-    setOpen(false)
-  }
-
+    setOpen(false);
+  };
+ 
   const handleOpen = () => {
-    setOpen(true)
-  }
-
-  const modalRef = useRef()
-
+    setOpen(true);
+  };
+ 
+  const modalRef = useRef();
+ 
   const handleClickOutside = (event) => {
     if (modalRef.current === event.target) {
-      handleClose()
+      handleClose();
     }
-  }
-
+  };
+ 
   const handleMove = () => {
-    setOpen(false)
-    navigate('checkout')
+    setOpen(false);
+    navigate('/Checkout')
   }
-
+ 
   return (
-    <div id='wrapper'>
-
-      <div id='navbar'>  
-        <nav className='navbar'>
-          <h2>Cats4Lyfe</h2>
-          <Link to = '/'> Home </Link>
-          <Link to = '/about'> About Us </Link>
-          <Link to = '/checkout'> Checkout </Link>
-          <button id='basketBtn' onClick={handleOpen}>Basket</button>
-        </nav>
-      </div>
-      
-      <div id='pathways'>
-        <Routes>
-          <Route path='/' element={<Home setCatsInBasket = {setCatsInBasket} />}></Route>
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/checkout' element={<Checkout catsInBasket = {catsInBasket} />}></Route>
-        </Routes>
-      </div>
-
-      <div>
-        
-      </div>
-
+    <div>
+ 
+      <nav className='navBar'>
+        <Link to='/'>Home</Link>
+        <Link to='/About'>About</Link>
+        <Link to='/Checkout'>Checkout</Link>
+        <button id="basket" onClick={handleOpen}>Basket</button>
+      </nav>
+ 
+      <Routes>
+        <Route path='/About' element={<About />}></Route>
+        <Route path='/' element={<Home setCatsInBasket = {setCatsInBasket} />}></Route>
+        <Route path='/Checkout' element={<Checkout catsInBasket = {catsInBasket} />}>Checkout</Route>
+      </Routes>
+ 
+      {open && (
+        <div className="modalBg" ref={modalRef} onClick={handleClickOutside}>
+         
+          <div className='iconModal'>
+ 
+            <div className='Products'>
+            {catsInBasket.map((cat, index) => {
+            return (
+                <div key={index}>
+                  <h2>{cat.name}</h2>
+                  <h2>£{cat.price}</h2>
+                </div>
+            )
+        })}
+        <h2>Total Price: £{catsInBasket.reduce((total, cat) => total+cat.price, 0)}</h2>
+            </div>
+ 
+            <button id='x' onClick={handleClose}>X</button>
+            <button id='close' onClick={handleMove}>Go To Checkout</button>
+ 
+          </div>
+        </div>
+      )
+    }
+ 
     </div>
   )
 }
-
+ 
 export default App
