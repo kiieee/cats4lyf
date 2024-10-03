@@ -23,10 +23,10 @@ const Home = () => {
             {image.map((catInfo, index) => {
                 return (
                     <div key={index} className="petInfoList">
+                     <img src={catInfo.url}/>
                     <h2>Name: {catInfo.catName}</h2>
                     <h3>Price: £{catInfo.catPrice}</h3>
-                    <img src={catInfo.url}/>
-                    </div>
+                 </div>
                 )
             })}
         </div>
