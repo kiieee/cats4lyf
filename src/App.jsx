@@ -3,7 +3,7 @@ import './index.css'
 import './App.css'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import About from './pages/About'
-import Home from './pages/Home'
+import Home from './pages/home'
 import Checkout from './pages/checkout'
  
 const App = () => {
@@ -31,6 +31,12 @@ const App = () => {
   const handleMove = () => {
     setOpen(false);
     navigate('/Checkout')
+  }
+
+  const removeItem = (index) => {
+    let clone = [...catsInBasket]
+    clone.splice(index, 1)
+    setCatsInBasket(clone)
   }
  
   return (
@@ -60,6 +66,7 @@ const App = () => {
                 <div key={index}>
                   <h2>{cat.name}</h2>
                   <h2>£{cat.price}</h2>
+                  <button onClick={() => removeItem(index)}>Remove from cart</button>
                 </div>
             )
         })}
