@@ -1,26 +1,16 @@
-import { faker } from "@faker-js/faker"
-
-const bio = () => {
-    faker.person.bio()
-}
 
 const About = () => {
     return(
     <div>
-        <h1>About Us</h1>
+        <h1>Contact Us</h1>
+        <h4>TEL: +44 151 280 7757</h4>
+        <h4>EMAIL: contact@cats4lyfe.com</h4>
+        <h4>HEAD OFFICE:</h4>
+        <h4>47 Greenbank Lane</h4>
+        <h4>Liverpool</h4>
+        <h4>Merseyside</h4>
+        <h4>L17 1AG</h4>
 
-        <div>
-            <h5>Kieran</h5>
-            <p>{bio()}</p>
-        </div>
-        <div>
-            <h5>John-Paul</h5>
-            <p>{bio()}</p>
-        </div>
-        <div>
-            <h5>Rukayat</h5>
-            <p>{bio()}</p>
-        </div>
     </div>
 )}
 
