@@ -44,7 +44,7 @@ const App = () => {
  
       <nav className='navBar'>
         <Link to='/'>Home</Link>
-        <Link to='/About'>About</Link>
+        <Link to='/About'>Contact Us</Link>
         <Link to='/Checkout'>Checkout</Link>
         <button id="basket" onClick={handleOpen}>Basket</button>
       </nav>
