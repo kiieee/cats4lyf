@@ -1,0 +1,69 @@
+.petInfo {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  
+  .petInfoList {
+    padding: 10px;
+
+  }
+
+  img {
+    width: 200px;
+    padding: 10px;
+    transition: all 0.5s;
+  }
+  
+  img:hover {
+    transform: scale(1.1);
+  }
+  
+  .modalBg {
+    font-style: italic;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -40%);
+    background-color: aliceblue;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    place-items: row;
+    min-width: 100px;
+    min-height: 100vh;
+    background-color: rgb(254, 247, 234);
+  }
+  
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+    font-style: italic;
+  }
+  
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: green;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+
+#basket {
+float: right;
+}
+
+.navBar {
+font-size: 25px;
+}
+
+.navBar a {
+    padding: 10px;
+}
+  
