@@ -84,7 +84,6 @@ const Home = ({setCatsInBasket}) => {
             <div className="catName">
               <h2>{selected.name}</h2>
               <p>This cat is from {selected.city}!</p>
-              <p>This cat was born on {selected.dob.toString()}!</p>
             </div>
  
             <p>{selected.description}</p>

@@ -3,7 +3,7 @@ import './index.css'
 import './App.css'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
 import About from './pages/About'
-import Home from './pages/Home'
+import Home from './pages/home'
 import Checkout from './pages/checkout'
  
 const App = () => {
