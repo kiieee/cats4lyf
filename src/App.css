@@ -1,4 +1,4 @@
-.petInfo {
+#catContainer {
     display: flex;
     flex-wrap: wrap;
     cursor: pointer;
@@ -65,5 +65,9 @@ font-size: 25px;
 
 .navBar a {
     padding: 10px;
+}
+
+.catsSale {
+  width: 19vw;
 }
   

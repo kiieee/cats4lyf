@@ -32,6 +32,12 @@ const App = () => {
     setOpen(false);
     navigate('/Checkout')
   }
+
+  const removeItem = (index) => {
+    let clone = [...catsInBasket]
+    clone.splice(index, 1)
+    setCatsInBasket(clone)
+  }
  
   return (
     <div>
@@ -60,6 +66,7 @@ const App = () => {
                 <div key={index}>
                   <h2>{cat.name}</h2>
                   <h2>£{cat.price}</h2>
+                  <button onClick={() => removeItem(index)}>Remove from cart</button>
                 </div>
             )
         })}

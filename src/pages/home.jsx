@@ -59,6 +59,7 @@ const Home = ({setCatsInBasket}) => {
  
   const addToBasket = (selectedCat) => {
     setCatsInBasket(prev => [...prev, selectedCat])
+    handleClose()
   }
  
   return (
