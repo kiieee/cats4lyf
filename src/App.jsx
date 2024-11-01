@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import './index.css'
 import './App.css'
 import { Routes, Route, Link, useNavigate } from 'react-router-dom'
-import About from './pages/About'
+import About from './pages/about'
 import Home from './pages/home'
 import Checkout from './pages/checkout'
  
