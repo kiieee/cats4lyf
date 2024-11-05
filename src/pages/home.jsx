@@ -27,6 +27,7 @@ const Home = ({setCatsInBasket}) => {
           price: parseInt(faker.commerce.price({min: 100, max: 1500, dec: 2}))
         }
       })
+
  
       setAllCats(mainData);
       setErrorMsg("");
